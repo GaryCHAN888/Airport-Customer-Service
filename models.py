@@ -11,8 +11,8 @@ class OpenAIModel:
                 model=model_engine,
                 messages=messages
             )
-            role = response['choices'][0]['message']['role']
-            content = response['choices'][0]['message']['content'].strip()
+            role = response.choices[0].message.role
+            content = response.choices[0].message.content.strip()
             return role, content
         except Exception as e:
             raise e
